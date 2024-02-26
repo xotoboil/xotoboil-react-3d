@@ -5,6 +5,9 @@ import CharacterCameraMovement from './functions/CharacterCameraMovement';
 import CharacterMouseFollow from './functions/CharacterMouseFollow';
 import { GroupProps } from '@react-three/fiber';
 
+/**
+ * @todo Replace with new paths
+ */
 export function Model(props: GroupProps) {
 	const { nodes, materials } = useGLTF('/model/loot/loot1.glb') as any;
 
@@ -53,6 +56,18 @@ export function Model(props: GroupProps) {
 		nodes.feet_low_Kang_low011.material = handMaterial;
 		nodes.DMAD_cornea_l_Sphere010.material = corneaMaterial;
 
+		// suggested replace
+		/* 
+		nodes.loot_body_arm_00_left.material = handMaterial;
+		nodes.loot_body_arm_00_right.material = handMaterial;
+		nodes.loot_body_head_00_main.material = starMaterial;
+		nodes.loot_body_leg_00_left.material = handMaterial;
+		nodes.loot_body_leg_00_right.material = handMaterial;
+		nodes.loot_eye_eyeball_00_left.material = corneaMaterial;
+		nodes.loot_eye_eyeball_00_right.material = corneaMaterial;
+		nodes.beanie.material = hatmaterial;
+		*/
+
 		setLoaded(true);
 	}, [armTexture, nodes.hands_low_Kang_low015.material]);
 
@@ -86,22 +101,26 @@ export function Model(props: GroupProps) {
 					</group>
 					<group ref={headRef}>
 						<mesh
+							/* nodes.loot_eye_eyeball_00_left */
 							position={[-0.2, 0.95, 0.45]}
 							ref={leftEyeRef}
 							geometry={nodes.DMAD_cornea_r_Sphere005.geometry}
 							material={nodes.DMAD_cornea_l_Sphere010.material}
 						/>
 						<mesh
+							/* nodes.loot_eye_eyeball_00_right */
 							position={[0.2, 0.95, 0.45]}
 							ref={rightEyeRef}
 							geometry={nodes.DMAD_cornea_r_Sphere005.geometry}
 							material={nodes.DMAD_cornea_l_Sphere010.material}
 						/>
 						<mesh
+							/* nodes.beanie */
 							geometry={nodes.beanie_Cube001.geometry}
 							material={nodes.beanie_Cube001.material}
 						/>
 						<mesh
+							/* nodes.glasses */
 							geometry={nodes.glasses_Circle003.geometry}
 							material={nodes.glasses_Circle003.material}
 						/>
@@ -114,14 +133,17 @@ export function Model(props: GroupProps) {
 							material={nodes.hair_low_Kang_low031.material}
 						/>
 						<mesh
+							/* loot_face_mask_00_front */
 							geometry={nodes.mask_low_Kang_low033.geometry}
 							material={nodes.mask_low_Kang_low033.material}
 						/>
 						<mesh
+							/* loot_mouth_teeth_00_inner */
 							geometry={nodes.mouth_low001_Kang_low003.geometry}
 							material={nodes.mouth_low001_Kang_low003.material}
 						/>
 						<mesh
+							/* loot_body_head_00_main */
 							geometry={
 								nodes['kangVF_head_(1)_kangVF_head_(1)002'].geometry
 							}
@@ -130,6 +152,7 @@ export function Model(props: GroupProps) {
 							}
 						/>
 						<mesh
+							/* hair_low */
 							geometry={nodes.hair_low001_Kang_low001.geometry}
 							material={nodes.hair_low001_Kang_low001.material}
 						/>
