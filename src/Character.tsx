@@ -6,17 +6,17 @@ import CharacterMouseFollow from './functions/CharacterMouseFollow';
 import { GroupProps } from '@react-three/fiber';
 
 export function Model(props: GroupProps) {
-	const { nodes, materials } = useGLTF('/loot.glb') as any;
+	const { nodes, materials } = useGLTF('/model/loot/loot1.glb') as any;
 
 	// main states
 	const [loaded, setLoaded] = useState(false);
 
 	// mesh textures
 	const loader = new THREE.TextureLoader();
-	const armTexture = loader.load('/wooden.png');
-	const hatTextue = loader.load('/red.png');
-	const starTexture = loader.load('/star.png');
-	const eyeTexture = loader.load('/eye.png');
+	const armTexture = loader.load('/textures/wooden.png');
+	const hatTextue = loader.load('/textures/red.png');
+	const starTexture = loader.load('/textures/star.png');
+	const eyeTexture = loader.load('/textures/eye.png');
 
 	// eye wrap
 	eyeTexture.wrapS = THREE.RepeatWrapping;
@@ -150,4 +150,4 @@ export function Model(props: GroupProps) {
 		)
 	);
 }
-useGLTF.preload('/loot.glb');
+useGLTF.preload('/model/loot/loot1.glb');

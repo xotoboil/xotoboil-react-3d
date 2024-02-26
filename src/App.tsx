@@ -11,7 +11,7 @@ function App() {
 	const [model, setModel] = useState<{}>();
 	useEffect(() => {
 		const loader = new OBJLoader();
-		loader.load('/loot.obj', setModel);
+		loader.load('/model/loot/loot1.obj', setModel);
 	}, []);
 
 	return (
